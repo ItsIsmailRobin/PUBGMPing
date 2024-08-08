@@ -1,0 +1,603 @@
+body {
+    /* font-family: 'Open Sans', 'Helvetica Nue', sans-serif; */
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-weight: 300; /* You can choose 300, 400, 500, 700 depending on the weight you prefer */
+    font-size: 16px; /* Adjust size for readability */
+    line-height: 1.6; /* Improves readability */
+    /* background-color: #383d45; */
+    background-color: #161616;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+#takeSnapshotBtn {
+    position: relative;
+    padding-left: 40px; /* Adjust padding to fit image and text */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #62ffb4; /* Text color */
+    text-rendering: optimizeLegibility;
+    font-weight: 300;
+    font-family: 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+#takeSnapshotBtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 31px; /* Adjust the size as needed */
+    height: 24px; /* Adjust the size as needed */
+    background: url('../images/snapshot-ping-test.png') no-repeat center center;
+    background-size: contain; /* Ensures the image fits within the button */
+}
+
+h1, h2, h3, h4 {
+    font-family: inherit; /* Inherit from body */
+    font-weight: inherit; /* Inherit from body, or set a specific weight if needed */
+}
+
+h1 {
+    font-size: 3em; /* Adjust this size as needed */
+    line-height: 2; /* Improves readability */
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+}
+
+h2 {
+    font-size: 2em; /* Adjust this size as needed */
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: 1.2em; /* Adjust this size as needed */
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #35323245;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index:1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-shadow: rgba(255, 255, 255, 0.4) 0px 8px 16px;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ping {
+    text-shadow: rgba(255, 255, 255, 0.4) 0px 8px 16px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+nav a.nav-link {
+    /* margin-left: 20px;*/
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+a:not(.nav-link) {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:not(.nav-link):visited {
+    color: #ffffff;
+}
+
+a:not(.nav-link):hover {
+    color: #ffffff;
+}
+
+/* Override the color for links inside <nav> */
+nav a {
+    color: #ffffff; /* Original color for nav links */
+    text-align: center;
+    padding: 10px 15px; /* Add padding for touch-friendly spacing */
+}
+
+nav a:link, nav a:visited, nav a:hover, nav a:active {
+    color: #ffffff; /* Original color for nav links */
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px; /* Control the maximum width of the main container */
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 8px 16px;
+    overflow: hidden;
+    margin: 30px;
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    color: #000000;
+}
+
+.card a {
+    color: #000000;
+}
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px;
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #000000;
+    position: relative;
+}
+
+.card-content a {
+    color: #000000;
+}
+.card-content h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 0;
+    color: #000000;
+}
+
+.card-content p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #000000;
+}
+
+.card-content .card-bottom {
+    margin-top: auto;
+}
+
+.card-content a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .card {
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .card img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card-content {
+        width: calc(100% - 100px);
+        padding: 5px;
+    }
+
+    .card-content h2 {
+        font-size: 18px;
+    }
+
+    .card-content p {
+        font-size: 10px;
+    }
+
+    .card-content .card-bottom {
+        font-size: 12px;
+    }
+
+    .header-right {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .header-right a.nav-link {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    .title {
+        display: none;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    .card-content {
+        padding: 10px;
+    }
+
+    nav a.nav-link {
+       /* margin-left: 40px; */
+        color: #ffffff;
+    }
+
+    .header-right {
+        width: 800px;
+        justify-content: space-between;
+    }
+
+    .header-right a {
+        flex: 1;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1201px) {
+    .card-content {
+        padding: 10px;
+    }
+
+    nav a.nav-link {
+        /* margin-left: 40px; */
+        color: #ffffff;
+    }
+
+    .header-right {
+        width: 800px;
+        justify-content: space-between;
+    }
+
+    .header-right a {
+        flex: 1;
+        text-align: center;
+    }
+
+    main > .card {
+        max-width: calc(50% - 40px); /* Ensure max-width is consistent */
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main > .card {
+    /* flex: 1 1 450px;
+    max-width: 450px; */
+    flex: 1 1 calc(50% - 40px); /* 50% width minus margins, adjusted to fit two cards per row */
+    max-width: calc(50% - 40px);
+    margin: 10px; /* Space between cards */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+@media (max-width: 1200px) {
+    main > .card {
+        flex: 1 1 450px;
+        max-width: 450px;
+    }
+
+    .ping-test {
+        max-width: 100%; /* Adjust max-width for smaller screens */
+        padding: 10px; /* Add padding for better layout on smaller screens */
+    }    
+}
+
+@media (max-width: 600px) {
+    main > .card {
+        flex: 1 1 450px;
+        max-width: 450px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.ping-green {
+    color: green;
+}
+
+.ping-yellow {
+    color: yellow;
+}
+
+.ping-orange {
+    color: orange;
+}
+
+.ping-red {
+    color: red;
+}
+
+/* New Layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex: 1;
+    /* margin: 20px; */
+    background-color: #383d4540;
+    color: #ffffff;
+    padding: 60px;
+    min-height: 80px; /* Set minimum height */
+    /* border-radius: 8px; */
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+}
+
+.column h1, .column p {
+    margin: 10px 0;
+}
+
+.column h1 {
+    font-size: 24px;
+}
+
+.ping-list {
+    list-style: none;
+    padding: 0;
+}
+
+.column a {
+    color:rgb(134, 157, 201);
+}
+
+.column a:visited {
+    color:rgb(134, 157, 201) !important; /* Ensure visited links are also styled */
+}
+
+.ping-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.ping-time {
+    font-weight: bold;
+}
+
+/* Responsive adjustments for the new layout */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .column {
+        margin: 10px 0;
+    }
+
+    .header-right {
+        flex-direction: column; /* Stack menu items vertically on small screens */
+    }
+
+    nav a, .dropbtn {
+        width: 100%; /* Full width for touch-friendly UI */
+        box-sizing: border-box; /* Ensure padding and borders are included in width */
+    }
+
+    .dropbtn {
+        margin-bottom: 10px; /* Add space between dropdown and other links */
+    }
+
+    main > .card {
+        flex: 1 1 100%; /* Full width for each card on smaller screens */
+        max-width: 100%;
+    }
+
+    .ping-test {
+        padding: 5px; /* Adjust padding for even smaller screens */
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .column h1 {
+        font-size: 20px;
+    }
+
+    .ping-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ping-time {
+        margin-top: 5px;
+    }
+
+    .header-right {
+        flex-direction: column;
+    }
+
+    nav a, .dropbtn {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .dropdown-content a {
+        padding: 10px 15px; /* Ensure adequate padding */
+    }
+    
+    .ping-test {
+        padding: 2px; /* Minimal padding for very small screens */
+    }
+}
+
+#centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+}
+
+/* Dropdown button */
+.dropbtn {
+    background-color: #353232;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #383d45;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 320px;
+    z-index: 1;
+    min-width: 200px; /* Reduce width for better fit on smaller screens */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left; /* Ensures text is aligned to the left */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #575757;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.span-colored {
+    color: #d54eff94; /* Set the text color */
+}
+
+a {
+    text-decoration: none;
+    color: #98a8c4; /* Same as .span-colored */
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: #ffffff; /* Same as .span-colored */
+}
+
+.ping-test{
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    max-height: 255px;
+    margin: 0 auto 20px; /* Center and add spacing below */
+    background-color: transparent; /* Or any color if needed */
+}
+
+
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    left: px;
+    right: 10px;
+    width: 100%; /* Optional: ensure footer spans the full width */
+    background-color: #161616; /* Optional: set a background color */
+    color: #ffffff; /* Optional: set a text color */
+    padding: 10px; /* Optional: adjust padding as needed */
+    text-align: right; /* Align text to the left */
+}
+
+footer a {
+    color: #ffffff; /* Link color */
+    text-decoration: none; /* Remove underline from link */
+}
+
+footer a:hover {
+    text-decoration: underline; /* Underline link on hover */
+}
+
+
